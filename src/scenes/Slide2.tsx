@@ -15,15 +15,11 @@ export default makeScene2D(function* (view) {
   const diversText = createRef<Txt>();
   const pageNumber = createRef<Txt>();
 
-
   // Textos
   const title_final_text = "O que é Ofuscação e Diversificação?";
   const ofusc_final_text = "Ofuscação é o processo de embaralhar o código e torná-lo ininteligível (mas ainda funcional), a fim de dificultar a engenharia reversa. (Hosseinzadeh et al., 2018, p.72)";
   const divers_final_text = "Diversificação é a mudança das interfaces internas e da estrutura do software para gerar versões únicas e diversificadas dele. Os usuários recebem instâncias únicas que funcionam da mesma forma. (Hosseinzadeh et al., 2018, p.7)";
 
-
-  yield* slideTransition(Direction.Right,1);
-  
   // Número da página no canto inferior direito
   view.add(
     <Txt
@@ -37,6 +33,8 @@ export default makeScene2D(function* (view) {
       y={500}
     />
   );
+
+  yield* slideTransition(Direction.Right,1);
   
   // Layout principal
   view.add(
@@ -85,8 +83,6 @@ export default makeScene2D(function* (view) {
     </Layout>
   );
 
-
-
   // Animações
   yield* beginSlide('Animation 1');
   yield* revealTextScramble(title(), title_final_text, 0.03);
@@ -102,8 +98,6 @@ export default makeScene2D(function* (view) {
 
   yield* beginSlide('Animation 5');
   yield* diversText().opacity(1, 0.5);
-
-
 
 
   yield* beginSlide('Animation Final');

@@ -12,15 +12,25 @@ export default makeScene2D(function* (view) {
   const authors_ref = createRef<Txt>();
   const year_ref = createRef<Txt>();
 
-
-
   //Texts
   const paper_name = "“Diversification and obfuscation techniques for software security: A systematic literature review.”";
   const authors = "S. Hosseinzadeh, S. Rauti, S. Laurén, J.-M. Mäkelä, J. Holvitie, S. Hyrynsalmi, and V. Leppänen";
   const year = "Elsevier, 2018";
 
-  yield* slideTransition(Direction.Right,1);
+  // Número da página no canto inferior direito
+  view.add(
+    <Txt
+      text="1"
+      fontFamily="Cal Sans"
+      fontWeight={300}
+      fill="#ffffff"
+      fontSize={32}
+      x={880}
+      y={500}
+    />
+  );
 
+  yield* slideTransition(Direction.Right,1);
 
   // Layout principal
   view.add(
@@ -50,18 +60,7 @@ export default makeScene2D(function* (view) {
   );
 
 
-  // Número da página no canto inferior direito
-  view.add(
-    <Txt
-      text="1"
-      fontFamily="Cal Sans"
-      fontWeight={300}
-      fill="#ffffff"
-      fontSize={32}
-      x={880}
-      y={500}
-    />
-  );
+
 
   // Animações
   yield* beginSlide('Animation 1');
