@@ -1,13 +1,6 @@
 import { Txt } from '@motion-canvas/2d';
 import { waitFor} from '@motion-canvas/core';
 
-/**
- * Anima um efeito de texto com caracteres embaralhados estilo "decodificação".
- *
- * @param node - O componente de texto (Txt) do Motion Canvas.
- * @param finalText - O texto final que será exibido.
- * @param delayPerChar - Tempo (em segundos) entre cada atualização de caractere.
- */
 
 export function* revealTextScramble(
   node: Txt,
