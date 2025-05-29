@@ -39,7 +39,7 @@ export default makeScene2D(function* (view) {
         {...styles.DefaultTitleStyle}
         ref={paper_name_ref}
         text={paper_name}
-        fontSize={60}
+        fontSize={80}
         textAlign={'center'}
       />
       <Txt

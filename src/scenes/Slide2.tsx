@@ -59,24 +59,14 @@ export default makeScene2D(function* (view) {
         </Layout>
         <Layout layout direction="column" gap={20} alignItems={'start'}> 
           <Txt
-            textWrap={true}
+            {...styles.DefaultSubTitleStyle}
             ref={diversTitle}
             text="Diversificação"
-            fontFamily="Cal Sans"
-            fontWeight={700}
-            fill="#ffffff"
-            fontSize={64}
-            opacity={0}
           />
           <Txt
-            textWrap={true}
+            {...styles.DefaultNormalText}
             ref={diversText}
             text={divers_final_text}
-            fontFamily="Cal Sans"
-            fontWeight={400}
-            fill="#ededed"
-            fontSize={42}
-            opacity={0}
           />
         </Layout>
       </Layout>
@@ -84,19 +74,18 @@ export default makeScene2D(function* (view) {
   );
 
   // Animações
-  yield* beginSlide('Animation 1');
   yield* revealTextScramble(title(), title_final_text, 0.03);
 
-  yield* beginSlide('Animation 2');
+  yield* beginSlide('Animation 1');
   yield* revealTextScramble(ofuscTitle(), "Ofuscação", 0.03);
 
-  yield* beginSlide('Animation 3');
+  yield* beginSlide('Animation 2');
   yield* ofuscText().opacity(1, 0.5);
 
-  yield* beginSlide('Animation 4');
+  yield* beginSlide('Animation 3');
   yield* revealTextScramble(diversTitle(), "Diversificação", 0.03);
 
-  yield* beginSlide('Animation 5');
+  yield* beginSlide('Animation 4');
   yield* diversText().opacity(1, 0.5);
 
 
