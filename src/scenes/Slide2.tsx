@@ -74,7 +74,7 @@ export default makeScene2D(function* (view) {
   );
 
   // Animações
-  yield* revealTextScramble(title(), title_final_text, 0.03);
+  yield* revealTextScramble(title(), title_final_text, 0.02);
 
   yield* beginSlide('Animation 1');
   yield* revealTextScramble(ofuscTitle(), "Ofuscação", 0.03);
