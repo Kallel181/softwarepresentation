@@ -1,4 +1,4 @@
-import {Layout, makeScene2D,Txt} from '@motion-canvas/2d';
+import {Layout, makeScene2D,Txt,Img} from '@motion-canvas/2d';
 import {beginSlide, all, createRef, waitFor, slideTransition, Direction} from '@motion-canvas/core';
 
 
@@ -12,6 +12,14 @@ export default makeScene2D(function* (view) {
 
   const title_final_text = "Segurança de Software"
   const sub_title_final_text = "Tecnicas de Ofuscação e Diversificação"
+
+  //BG
+  view.add(
+    <Img
+      src={'src/scenes/assets/BG.png'}
+      opacity={0.03}
+    />
+  )
 
   yield* beginSlide('Animation 1');
   yield* waitFor(0.1);
