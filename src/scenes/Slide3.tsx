@@ -42,6 +42,14 @@ export default makeScene2D(function* (view) {
     />
   );
 
+  //BG
+  view.add(
+    <Img
+      src={'src/scenes/assets/BG.png'}
+      opacity={0.03}
+    />
+  )
+
   yield* slideTransition(Direction.Right,1);
   
   // Layout principal

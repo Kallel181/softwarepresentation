@@ -1,4 +1,4 @@
-import { Layout, makeScene2D, Txt } from '@motion-canvas/2d';
+import { Layout, makeScene2D, Txt, Img } from '@motion-canvas/2d';
 import { createRef, beginSlide, waitFor,slideTransition, Direction} from '@motion-canvas/core';
 import { revealTextScramble } from './util/animations';
 
@@ -16,7 +16,14 @@ export default makeScene2D(function* (view) {
   const paper_name = "“Diversification and obfuscation techniques for software security: A systematic literature review.”";
   const authors = "S. Hosseinzadeh, S. Rauti, S. Laurén, J.-M. Mäkelä, J. Holvitie, S. Hyrynsalmi, and V. Leppänen";
   const year = "Elsevier, 2018";
-
+  
+  //BG
+  view.add(
+    <Img
+      src={'src/scenes/assets/BG.png'}
+      opacity={0.03}
+    />
+  )
   // Número da página no canto inferior direito
   view.add(
     <Txt

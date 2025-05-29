@@ -1,5 +1,5 @@
-import { Layout, makeScene2D, Txt } from '@motion-canvas/2d';
-import { createRef, beginSlide, waitFor,slideTransition, Direction} from '@motion-canvas/core';
+import { Layout, makeScene2D, Txt, Img } from '@motion-canvas/2d';
+import { createRef, beginSlide, waitFor,slideTransition, Direction, all} from '@motion-canvas/core';
 import { revealTextScramble } from './util/animations';
 
 import * as styles from './util/styles';
@@ -19,6 +19,14 @@ export default makeScene2D(function* (view) {
   const title_final_text = "O que é Ofuscação e Diversificação?";
   const ofusc_final_text = "Ofuscação é o processo de embaralhar o código e torná-lo ininteligível (mas ainda funcional), a fim de dificultar a engenharia reversa. (Hosseinzadeh et al., 2018, p.72)";
   const divers_final_text = "Diversificação é a mudança das interfaces internas e da estrutura do software para gerar versões únicas e diversificadas dele. Os usuários recebem instâncias únicas que funcionam da mesma forma. (Hosseinzadeh et al., 2018, p.7)";
+  
+  //BG
+  view.add(
+    <Img
+      src={'src/scenes/assets/BG.png'}
+      opacity={0.03}
+    />
+  )
 
   // Número da página no canto inferior direito
   view.add(
@@ -81,6 +89,45 @@ export default makeScene2D(function* (view) {
 
   yield* beginSlide('Animation 2');
   yield* ofuscText().opacity(1, 0.5);
+
+  
+  //GAG
+  const clean = createRef<Img>();
+  const dirt = createRef<Img>();
+  
+  view.add(
+    <>
+      <Img 
+      ref={clean}
+      src={'src/scenes/assets/clean_code_cover.png'} 
+      scale={0.6} 
+      y={200} 
+      opacity={0}
+      />
+      
+      <Img 
+      ref={dirt}
+      src={'src/scenes/assets/dirty_code_cover.png'} 
+      scale={0.6} 
+      y={200} 
+      opacity={0}
+      />
+    </>
+  );
+
+  yield* beginSlide('Animation 2.1');
+  yield* clean().opacity(1, 0.5);
+
+  yield* beginSlide('Animation 2.2');
+  yield* all(
+    clean().opacity(0, 0.5),
+    dirt().opacity(1, 0.5),
+  );
+
+  yield* beginSlide('Animation 2.3');
+  yield* dirt().opacity(0, 0.5);
+
+
 
   yield* beginSlide('Animation 3');
   yield* revealTextScramble(diversTitle(), "Diversificação", 0.03);
