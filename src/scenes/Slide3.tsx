@@ -1,5 +1,5 @@
-import { Layout, makeScene2D, Txt } from '@motion-canvas/2d';
-import { createRef, beginSlide, waitFor,slideTransition, Direction} from '@motion-canvas/core';
+import { Layout, makeScene2D, Rect, Img, Txt } from '@motion-canvas/2d';
+import { createRef, beginSlide, slideTransition, Direction} from '@motion-canvas/core';
 import { revealTextScramble } from './util/animations';
 
 import * as styles from './util/styles';
@@ -10,11 +10,13 @@ export default makeScene2D(function* (view) {
   // Refs
   const pageNumber = createRef<Txt>();
   const title = createRef<Txt>();
+  const engRevRef = createRef<Txt>();
+  const engRevTitleRef = createRef<Txt>();
 
   // Textos
   const title_final_text = "Por que usar Ofuscação e Diversificação?";
-  const ofusc_final_text = "Ofuscação é o processo de embaralhar o código e torná-lo ininteligível (mas ainda funcional), a fim de dificultar a engenharia reversa. (Hosseinzadeh et al., 2018, p.72)";
-  const divers_final_text = "Diversificação é a mudança das interfaces internas e da estrutura do software para gerar versões únicas e diversificadas dele. Os usuários recebem instâncias únicas que funcionam da mesma forma. (Hosseinzadeh et al., 2018, p.7)";
+
+  const engRev = "O principal objetivo das técnicas de ofuscação e diversificação é dificultar a engenharia reversa de software."
 
   // Número da página no canto inferior direito
   view.add(
@@ -40,6 +42,59 @@ export default makeScene2D(function* (view) {
         ref={title}
         text={title_final_text}
       />
+      <Layout layout direction="column" gap={100}>
+        
+        <Layout layout direction="column" gap={20}>
+          <Txt
+            {...styles.DefaultSubTitleStyle}
+            ref={engRevTitleRef}
+            text="Engenharia Reversa"
+          />
+          <Txt
+            {...styles.DefaultNormalText}
+            ref={engRevRef}
+            text={engRev}
+          />
+        </Layout>
+        
+        
+        <Layout layout direction={'row'} alignItems={'center'} gap={20} alignSelf={'center'}>
+          <Rect layout direction={'row'} alignItems={'center'} stroke={'#de7c31'} radius={25} lineWidth={8} padding={20} gap={15}>
+            <Img src={'src/scenes/assets/Binary.png'} width={100}/>
+            <Txt
+              {...styles.DefaultNormalText}
+              text={"Arquivo Binário"}
+              fill={'#de7c31'}
+              opacity={1}
+            />            
+          </Rect>
+
+          <Img src={'src/scenes/assets/arrow.png'} width={100}/>
+          
+          <Rect layout direction={'row'} alignItems={'center'} stroke={'#b0de31'} radius={25} lineWidth={8} padding={20} gap={15}>
+            <Img src={'src/scenes/assets/Binary_cogs.png'} width={120}/>
+            <Txt
+              {...styles.DefaultNormalText}
+              text={"Disassembler"}
+              fill={'#b0de31'}
+              opacity={1}
+            />            
+          </Rect>
+
+          <Img src={'src/scenes/assets/arrow.png'} width={100}/>
+          
+          <Rect layout direction={'row'} alignItems={'center'} stroke={'#31bbde'} radius={25} lineWidth={8} padding={20} gap={15}>
+            <Img src={'src/scenes/assets/Binary_glass.png'} width={120}/>
+            <Txt
+              {...styles.DefaultNormalText}
+              text={"Extração de Lógica"}
+              fill={'#31bbde'}
+              opacity={1}
+            />            
+          </Rect>
+        </Layout>
+
+      </Layout>
     </Layout>
   );
 
@@ -47,7 +102,10 @@ export default makeScene2D(function* (view) {
   yield* revealTextScramble(title(), title_final_text, 0.02);
 
   yield* beginSlide('Animation 1');
-  
+  yield* revealTextScramble(engRevTitleRef(), "Engenharia Reversa", 0.03);
+
+  yield* beginSlide('Animation 2');
+  yield* engRevRef().opacity(1, 0.5);
 
 
 
