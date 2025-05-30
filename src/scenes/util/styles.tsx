@@ -29,3 +29,10 @@ export const DefaultNormalText = {
   fontSize: 42,
   opacity: 0
 }
+
+export const DefaultCodeStyle = {
+  fontWeight: 600,
+  fontFamily: "Fira Code",
+  opacity: 0,
+  fontSize: 38
+}
