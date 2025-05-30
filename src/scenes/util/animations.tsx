@@ -1,5 +1,5 @@
 import { Txt } from '@motion-canvas/2d';
-import { waitFor} from '@motion-canvas/core';
+import { waitFor, easeOutBack, easeInBack, all } from '@motion-canvas/core';
 
 
 export function* revealTextScramble(
@@ -24,4 +24,23 @@ export function* revealTextScramble(
   }
 
   node.text(finalText);
+}
+
+
+export function* highlightText(
+  node: Txt,
+  highlightColor: string,
+  scaleAmount: number,
+  duration: number,
+) {
+  // Escala e cor ao destacar
+  yield* all(
+    node.fill(highlightColor, duration),
+    node.scale(scaleAmount, duration/2, easeOutBack),
+  );
+
+  // Retorna ao normal
+  yield* all(
+    node.scale(1, duration/2, easeInBack)
+  );
 }
