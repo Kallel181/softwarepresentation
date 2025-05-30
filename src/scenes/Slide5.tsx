@@ -1,4 +1,4 @@
-import { Layout, makeScene2D, Rect, Img, Txt, Code, lines, CODE } from '@motion-canvas/2d';
+import { Layout, makeScene2D, Img, Txt, Code, lines, CODE } from '@motion-canvas/2d';
 import { createRef, beginSlide, slideTransition, Direction, DEFAULT} from '@motion-canvas/core';
 import { revealTextScramble } from './util/animations';
 
@@ -153,7 +153,6 @@ int main() {
 
   yield* beginSlide('Animation 10');
   yield* codeExampleRef().selection(DEFAULT, 0.6);
-
 
   yield* beginSlide('Animation Final');
 });
