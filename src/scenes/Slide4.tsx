@@ -28,7 +28,7 @@ export default makeScene2D(function* (view) {
   view.add(
     <Txt
       ref={pageNumber}
-      text="4"
+      text="5"
       fontFamily="Cal Sans"
       fontWeight={300}
       fill="#ffffff"
