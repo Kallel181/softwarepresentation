@@ -61,7 +61,7 @@ export default makeScene2D(function* (view) {
           <Txt
             {...styles.DefaultSubTitleStyle}
             ref={tecRef}
-            text="Inserção Falsa"
+            text="Inserção Falsa (Bogus insertion)"
           />
           <Txt
             {...styles.DefaultNormalText}
@@ -93,7 +93,7 @@ int main() {
   );
 
   // Animações
-  yield* revealTextScramble(tecRef(), "Inserção Falsa", 0.04);
+  yield* revealTextScramble(tecRef(), "Inserção Falsa (Bogus insertion)", 0.04);
 
   yield* beginSlide('Animation 2');
   yield* tecTextRef().opacity(1, 0.5);
