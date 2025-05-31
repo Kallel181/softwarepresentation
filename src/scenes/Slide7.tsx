@@ -5,7 +5,7 @@ import { revealTextScramble } from './util/animations';
 import * as styles from './util/styles';
 
 export default makeScene2D(function* (view) {
-  view.fill('#101214');
+  view.fill(styles.DefaultBackgroundColor);
 
   // Refs
   const pageNumber = createRef<Txt>();
@@ -60,7 +60,7 @@ export default makeScene2D(function* (view) {
           <Txt
             {...styles.DefaultSubTitleStyle}
             ref={tecRef}
-            text="Transposição de Métodos"
+            text="Transposição de Métodos (Inlining methods)"
           />
           <Txt
             {...styles.DefaultNormalText}
@@ -88,7 +88,7 @@ void modificar(int x) {
 }
 
 int main() {
-  modificar(4); // chamada clara da função
+  modificar(4);
   cout << "Valor de c: " << c << endl;
   
   return 0;
@@ -99,7 +99,7 @@ int main() {
   );
 
   // Animações
-  yield* revealTextScramble(tecRef(), "Transposição de Métodos", 0.04);
+  yield* revealTextScramble(tecRef(), "Transposição de Métodos (Inlining methods)", 0.04);
 
   yield* beginSlide('Animation 2');
   yield* tecTextRef().opacity(1, 0.5);
@@ -121,19 +121,19 @@ int main() {
   yield* beginSlide('Animation 6');
   yield* codeExampleRef().code(CODE`\
 #include <iostream>
-
+using namespace std;
 int c = 0;
 
 int main() {
     int x = 4;
     ${comment1}
     if (x % 2 == 0) {
-        c += x * 2;
+      c += x * 2;
     } else {
-        c += x + 3;
+      c += x + 3;
     }
 
-    std::cout << "Valor de c: " << c << endl;
+    cout << "Valor de c: " << c << endl;
     return 0;
 }`,2);
 
