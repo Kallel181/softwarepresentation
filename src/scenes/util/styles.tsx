@@ -1,3 +1,4 @@
+export const DefaultBackgroundColor = "#101214"
 export const DefaultTitleColor = "#ffffff"
 export const DefaultTextColor = "#ededed"
 
