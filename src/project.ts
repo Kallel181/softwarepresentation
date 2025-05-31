@@ -41,11 +41,14 @@ import Slide2 from './scenes/Slide2?scene';
 import Slide3 from './scenes/Slide3?scene';
 import Slide4 from './scenes/Slide4?scene';
 import Slide5 from './scenes/Slide5?scene';
+import Slide6 from './scenes/Slide6?scene';
+import Slide7 from './scenes/Slide7?scene';
+import Slide8 from './scenes/Slide8?scene';
 
 import './global.css'; // <- import the css
 
 export default makeProject({
-  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5],
+  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5,Slide6,Slide7,Slide8],
 });
 
 
