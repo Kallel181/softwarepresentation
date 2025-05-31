@@ -75,7 +75,7 @@ export default makeScene2D(function* (view) {
           <Txt
             {...styles.DefaultSubTitleStyle}
             ref={tecRef}
-            text="Predicados Opacos"
+            text="Predicados Opacos (Opaque predicates)"
           />
           <Txt
             {...styles.DefaultNormalText}
@@ -107,7 +107,7 @@ int main() {
 
   yield* beginSlide('Animation 1');
   yield* title().opacity(0, 0.5);
-  yield* revealTextScramble(tecRef(), "Predicados Opacos", 0.03);
+  yield* revealTextScramble(tecRef(), "Predicados Opacos (Opaque predicates)", 0.03);
 
   yield* beginSlide('Animation 2');
   yield* tecTextRef().opacity(1, 0.5);
