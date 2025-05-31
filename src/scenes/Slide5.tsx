@@ -19,7 +19,7 @@ export default makeScene2D(function* (view) {
 
   // Textos
   const title_final_text = "Tecnicas de Ofuscação e Diversificação";
-  const tecText = "Expressões booleanas que sempre resultam em verdadeiro ou falso, mas cuja avaliação só pode ser confirmada em tempo de execução. Elas confundem o fluxo de controle do programa, dificultando a análise e a engenharia reversa."
+  const tecText = "Expressões booleanas que sempre resultam em verdadeiro ou falso, mas cuja avaliação só pode ser confirmada em tempo de execução. Elas confundem o fluxo de execução do programa, dificultando a análise e a engenharia reversa."
 
   // Número da página no canto inferior direito
   view.add(
