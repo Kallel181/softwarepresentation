@@ -44,11 +44,13 @@ import Slide5 from './scenes/Slide5?scene';
 import Slide6 from './scenes/Slide6?scene';
 import Slide7 from './scenes/Slide7?scene';
 import Slide8 from './scenes/Slide8?scene';
+import Slide9 from './scenes/Slide9?scene';
 
 import './global.css'; // <- import the css
 
+
 export default makeProject({
-  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5,Slide6,Slide7,Slide8],
+  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5,Slide6,Slide7,Slide8,Slide9],
 });
 
 
