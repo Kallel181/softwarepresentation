@@ -23,7 +23,7 @@ export default makeScene2D(function* (view) {
 
   // Textos
   const title_final_text = "Considerações Finais";
-  const pre = "Combinar técnicas aplicadas em diferentes momentos — pré-compilação, compilação, pós-compilação e pós-distribuição — cria um ecossistema robusto de segurança para o software."
+  const pre = "Combinar técnicas de ofuscação e diversificação e aplicá-las em diferentes momentos cria um ecossistema robusto de segurança para o software."
   const comp = "Ofuscação dificulta a leitura direta do código; diversificação gera múltiplas variantes funcionais para reduzir ataques replicáveis. Ambas aumentam a resiliência do software."
   const post_comp = "Modelos de IA possuem a capacidade de identificar e reverter técnicas de ofuscação, exigindo proteção cada vez mais sofisticada e adaptativa contra análises automatizadas."
 
