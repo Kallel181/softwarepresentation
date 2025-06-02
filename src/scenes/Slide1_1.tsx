@@ -90,7 +90,7 @@ export default makeScene2D(function* (view) {
           <Txt
             {...styles.DefaultSubTitleStyle}
             ref={classificationRef}
-            text="Classificação e Nomeação das Técnicas"
+            text="Classificação e Nomeação dos Métodos"
           />
           <Txt
             {...styles.DefaultNormalText}
@@ -120,7 +120,7 @@ export default makeScene2D(function* (view) {
   yield* colectTextRef().opacity(1,0.5);
 
   yield* beginSlide('Animation 5');
-  yield* revealTextScramble(classificationRef(), "Classificação e Nomeação das Técnicas", 0.015);
+  yield* revealTextScramble(classificationRef(), "Classificação e Nomeação dos Métodos", 0.015);
 
   yield* beginSlide('Animation 6');
   yield* classificationTextRef().opacity(1,0.5);
