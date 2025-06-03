@@ -1,2 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Codedisplay=swap');
+@font-face {
+  font-family: 'Cal Sans';
+  src:
+    local('Cal Sans'),
+    url(public/fonts/CalSans-Regular.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Fira Code';
+  src:
+    local('Fira Code'),
+    url(public/fonts/FiraCode-VariableFont_wght.ttf) format('truetype');
+}
