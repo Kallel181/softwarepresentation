@@ -48,11 +48,12 @@ import Slide9 from './scenes/Slide9?scene';
 import Slide9_1 from './scenes/Slide9_1?scene';
 import SlideApply from './scenes/SlideApply?scene';
 import SlideConclusion from './scenes/SlideConclusion?scene';
+import ref from './scenes/ref?scene';
 
 import './global.css'; // <- import the css
 
 
 export default makeProject({
-  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5,Slide6,Slide7,Slide8,Slide9,Slide9_1,SlideApply,SlideConclusion],
+  scenes: [intro,Slide1,Slide1_1,Slide2,Slide3,Slide4,Slide5,Slide6,Slide7,Slide8,Slide9,Slide9_1,SlideApply,SlideConclusion,ref],
 });
 
